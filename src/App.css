@@ -1,10 +1,10 @@
 html {
-  background-color: rgba(189, 189, 189, 0.788);
+  background-color: rgba(226, 226, 226, 0.788);
 }
 
 .app-wrapper {
   display: grid;
-  width: 1400px;
+  width: 1700px;
   margin: 0 auto;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
