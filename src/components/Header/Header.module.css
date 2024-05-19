@@ -1,0 +1,29 @@
+.header {
+    grid-area: header;
+    background: rgba(94, 168, 236, 0.959);
+    border-radius: 5px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid black;
+    position: relative;
+  }
+  
+  .logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+  }
+
+  .themeIcon {
+    position: absolute;
+    border-radius: 100%;
+    width: 60px;
+    height: 51px;
+    right: 21px;
+    top: 3px;
+}
+  
+
+  
+
+  

@@ -1,0 +1,31 @@
+.main {
+    padding: 10px;
+}
+.item {
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    
+}
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+.post {
+    padding: 5px;
+}
+
+.btnLikes {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 800;
+}
+.btnLikes:active {
+    background-color: rgba(58, 196, 77, 0.8);
+}

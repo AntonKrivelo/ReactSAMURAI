@@ -1,0 +1,23 @@
+.mainContent {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 20px;
+  }
+  
+  .avatar img {
+    width: 150px;
+    height: 120px;
+    border-radius: 100%;
+    border: 2px solid black;
+  }
+  
+  .mainInformation {
+    .name {
+      margin-bottom: 15px;
+    }
+  }
+  .mainInformation span {
+    font-weight: 800;
+  }

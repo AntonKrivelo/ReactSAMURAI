@@ -1,0 +1,55 @@
+.dialogs {
+    display: grid;
+    background: rgba(94, 168, 236, 0.959);
+    margin-top: 5px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    grid-template-columns: 4fr 10fr;
+}
+.dialogsItems{
+    padding: 10px;
+}
+.item {
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dialogsItems .active {
+    color: gold;
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    padding: 10px;
+    margin: -14px auto; 
+}
+
+.messages {
+    padding: 22px;
+}
+.message {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.addMessages {
+    display: flex;
+}
+
+.textAreaMessage {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btnMessage {
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 900;
+}
