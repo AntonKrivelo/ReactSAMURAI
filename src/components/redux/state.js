@@ -80,7 +80,9 @@ updateNewMessageText (newText) {
 subscribe(observer) {
   this._callSubscriber = observer;
 },
-
+pageTheme() {
+ return this._callSubscriber;
+},
 
 };
 
