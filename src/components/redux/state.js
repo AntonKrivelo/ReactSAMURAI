@@ -34,7 +34,7 @@ _state: {
     ],
   },
   newsPage: {
-    newsPageText: 'Page news!',
+    newsPageText: 'Page news1!',
   },
 },
 getState() {
