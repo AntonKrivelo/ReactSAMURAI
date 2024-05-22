@@ -78,7 +78,7 @@ dispatch(action) {
       this._state.profilePage.postsData.push(newPost);
       this._state.profilePage.newPostText = '';
       this._callSubscriber(this._state);
-  }else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+  } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
   }
