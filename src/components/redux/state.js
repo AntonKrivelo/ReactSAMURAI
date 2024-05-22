@@ -24,7 +24,7 @@ _state: {
           {name: "Andrey", id: 5},
           {name: "Sergey", id: 6},
         ],
-        newMessageText: 'message 123',
+        newMessageText: 'messages',
   },
   sideBar: {
     friendsData: [
