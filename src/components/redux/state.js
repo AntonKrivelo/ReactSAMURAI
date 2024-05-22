@@ -43,22 +43,6 @@ getState() {
 _callSubscriber() {
   console.log('checked!');
 },
-addMessage() {
-  let newMessage = {
-    id: 8,
-    message: this._state.messagesPage.newMessageText,
-  };
-
-  this._state.messagesPage.messagesData.push(newMessage);
-  this._state.messagesPage.newMessageText = '';
-  this._callSubscriber(this._state);
-
-},
-updateNewMessageText (newText) {
-  this._state.messagesPage.newMessageText = newText;
-  this._callSubscriber(this._state);
-
-},
 subscribe(observer) {
   this._callSubscriber = observer;
 },
@@ -80,6 +64,17 @@ dispatch(action) {
       this._callSubscriber(this._state);
   } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
       this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+  } else if (action.type === 'ADD-MESSAGE') {
+    let newMessage = {
+      id: 8,
+      message: this._state.messagesPage.newMessageText,
+    };
+      this._state.messagesPage.messagesData.push(newMessage);
+      this._state.messagesPage.newMessageText = '';
+      this._callSubscriber(this._state);
+  } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+      this._state.messagesPage.newMessageText = action.newText;
       this._callSubscriber(this._state);
   }
 },
