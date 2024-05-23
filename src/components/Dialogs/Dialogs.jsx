@@ -8,14 +8,25 @@ const Dialogs = (props) => {
 
     let newMessagesElement = React.createRef();
     
+    let submitMessageActionCreator = () => {
+        return {
+            type: 'ADD-MESSAGE'
+        }
+    }
 
+    let onMessageChangeActionCreator = (text) => {
+        return {type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text}
+    }
+
+    
     let submitMessage = () => {
-        props.dispatch({type: 'ADD-MESSAGE'});
+        props.dispatch(submitMessageActionCreator());
     };
 
     let onMessageChange = () => {
         let text = newMessagesElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText:text});
+        let action = onMessageChangeActionCreator(text);
+        props.dispatch(action);
     };
 
     let dialogsElements = props.state.dialogsData.map(d => <DialogItem name={d.name} id={d.id} /> );
