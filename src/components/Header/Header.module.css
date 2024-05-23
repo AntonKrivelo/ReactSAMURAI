@@ -21,7 +21,11 @@
     top: 3px;
 }
   
-
-  
-
-  
+.setting_icon {
+  i {
+    position: absolute;
+    right: 1%;
+    top: 22%;
+    font-size: 38px;
+  }
+}
