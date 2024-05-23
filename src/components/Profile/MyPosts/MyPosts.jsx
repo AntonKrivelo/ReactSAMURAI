@@ -26,7 +26,7 @@ const MyPosts = (props) => {
                 <div className={classes.posts}>My posts :</div> 
                 <div className={classes.forms}>
                     <textarea value={props.newPostText} onChange={onPostChange} ref={newPostElement} className={classes.textArea}  />
-                    <button onClick={addPost} className={classes.button}>Send</button>
+                    <button onClick={addPost} className={classes.button}>add Post</button>
                 </div> 
                     {postElements}
             </div>  

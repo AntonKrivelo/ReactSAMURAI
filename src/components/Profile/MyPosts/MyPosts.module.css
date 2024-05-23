@@ -10,9 +10,8 @@
   .textArea {
     width: 40%;
     height: 80px;
-    background-color: rgba(248, 245, 245, 0.479);
+    background-color: rgba(248, 245, 245, 0.733);
     border-radius: 5px;
-    border: 2px solid rgb(145, 143, 143);
     font-size: 20px;
   
   }
@@ -21,25 +20,21 @@
    outline: none;
   }
   .button {
-    width: 100px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 900;
-    margin: 0px 31.8%;
+    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+    transition: 0.5s;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
     border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    background: #16e45a;
-    box-shadow: 0 5px 0 #1d9437;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
   }
   .button:hover {
-     background: #2fa82b;
-    box-shadow: none;
-    position: relative;
-    top: 5px;
+    transform: translate(0,-3px);
+    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+    background-color: rgba(11, 99, 246, 1);
+    color: #FFF;
   }
   .posts {
     font-size: 20px;
