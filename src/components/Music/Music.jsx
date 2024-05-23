@@ -4,8 +4,7 @@ import classes from './Music.module.css';
 const Music = (props) => {
     return (
         <div className={classes.content}>
-            Music page
-           
+            Oops, the page is under construction :(
         </div>
     );
 };

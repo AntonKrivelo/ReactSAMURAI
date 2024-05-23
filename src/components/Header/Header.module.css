@@ -1,10 +1,8 @@
 .header {
     grid-area: header;
     background: rgba(191, 215, 236, 0.959);
-    border-radius: 5px;
     padding: 7px;
     border-radius: 5px;
-    border: 2px solid black;
     position: relative;
   }
   

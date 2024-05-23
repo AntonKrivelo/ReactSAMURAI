@@ -8,10 +8,10 @@ let friendsElements = props.friendsData.map(f => <FriendsItems name={f.name} id=
 
     return (
         <div className={classes.friendsNav}>
-           <div>Friends:</div> 
-            <div className={classes.friendsItems}>
-                {friendsElements}
-            </div>
+           <div className={classes.header}>Friends:</div> 
+            <div className={classes.friendsItems}>    
+                    {friendsElements}           
+          </div>
         </div>
        
     );

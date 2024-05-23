@@ -39,7 +39,7 @@ _state: {
     ],
   },
   newsPage: {
-    newsPageText: 'Page news1!',
+    newsPageText: 'Oops, the page is under construction :(',
   },
 },
 getState() {
