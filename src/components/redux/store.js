@@ -1,5 +1,6 @@
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
+import sideBarReducer from "./sidebar-reducer";
 
 let ADD_POST = 'ADD-POST';
 let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -37,13 +38,13 @@ _state: {
         ],
         newMessageText: '',
   },
-  sideBar: {
-    friendsData: [
-      {name: "Antonio", id: 1},
-      {name: "Viktor", id: 2},
-      {name: "Valera", id: 3},
-    ],
-  },
+  // sideBar: {
+  //   friendsData: [
+  //     {name: "Antonio", id: 1},
+  //     {name: "Viktor", id: 2},
+  //     {name: "Valera", id: 3},
+  //   ],
+  // },
   newsPage: {
     newsPageText: 'Oops, the page is under construction :(',
   },
@@ -65,6 +66,9 @@ pageTheme() {
 dispatch(action) {
   this._state.profilePage = profileReducer(this._state.profilePage, action);
   this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
+  this._state.sideBar = sideBarReducer(this._state.sideBar, action);
+ 
+
   this._callSubscriber(this._state);
 
 
