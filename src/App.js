@@ -16,13 +16,11 @@ const App = (props) => {
             <Header />
             <Nav state={props.state.sideBar} />
             <Routes>
-              <Route path="/profile" element={ <Profile 
-              profilePage={props.state.profilePage} 
-              dispatch={props.dispatch} />} />    
-              <Route path="/dialogs/*" element={ <Dialogs state={props.state.messagesPage} dispatch={props.dispatch} />}/>
-              <Route path="/news" element={<News newsPage={props.state.newsPage} />}/>
-              <Route path="/music" element={<Music />}/>
-              <Route path="/settings" element={<Settings />}/>          
+                <Route path="/profile" element={ <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} store={props.store} />} />  
+                <Route path="/dialogs/*" element={ <Dialogs state={props.state.messagesPage} dispatch={props.dispatch} store={props.store} />} />
+                <Route path="/news" element={<News newsPage={props.state.newsPage} />}/>
+                <Route path="/music" element={<Music />}/>
+                <Route path="/settings" element={<Settings />}/>          
             </Routes>
         </div>
   );
