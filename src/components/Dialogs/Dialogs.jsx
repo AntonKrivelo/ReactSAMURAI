@@ -2,23 +2,23 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import DialogItem from "./DialogItem";
 import Message from "./Message";
-import { submitMessageActionCreator, onMessageChangeActionCreator } from "../redux/store";
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().messagesPage;
+    let state = props.messagesPage;
 
     let newMessagesElement = React.createRef();
 
-    let submitMessage = () => {
-        props.dispatch(submitMessageActionCreator());
+    let onSubmitMessage = () => {
+        props.sendMessage();
     };
 
     let onMessageChange = () => {
         let text = newMessagesElement.current.value;
-        let action = onMessageChangeActionCreator(text);
-        // props.store.dispatch(onMessageChangeActionCreator(text));
-        props.dispatch(action);
+        // let action = onMessageChangeActionCreator(text);
+        // // props.store.dispatch(onMessageChangeActionCreator(text));
+        // props.dispatch(action);
+        props.updateNewMessageText(text);
     };
 
     let dialogsElements = state.dialogsData.map(d => <DialogItem name={d.name} id={d.id} /> );
@@ -33,8 +33,8 @@ const Dialogs = (props) => {
             <div className={classes.messages}>
                 {messagesElements}
                 <div className={classes.addMessages}>
-                    <textarea value={props.state.newMessageText} onChange={onMessageChange} ref={newMessagesElement} className={classes.textAreaMessage} placeholder="transfereed message..."></textarea>
-                    <button onClick={submitMessage} className={classes.btnMessage}>Send</button>
+                    <textarea value={state.newMessageText} onChange={onMessageChange} ref={newMessagesElement} className={classes.textAreaMessage} placeholder="transfereed message..."></textarea>
+                    <button onClick={onSubmitMessage} className={classes.btnMessage}>Send</button>
                 </div>
             </div>
        </div>
