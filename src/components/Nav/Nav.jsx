@@ -13,7 +13,8 @@ const Nav = (props) => {
             <div><NavLink to="/news" className={classes.item}><i className="fi fi-rr-calendar"></i>News</NavLink></div> 
             <div><NavLink to="/music" className={classes.item}><i className="fi fi-rr-megaphone"></i>Music</NavLink></div> 
             <div><NavLink to="/settings" className={classes.item}><i className="fi fi-rr-settings"></i>Settings</NavLink></div>
-            <Friends friendsData={props.state.friendsData} />
+            {/* <Friends  />
+            friendsData={props.state.friendsData} */}
         </nav>
     );
 }
