@@ -6,7 +6,7 @@ import classes from "./News.module.css";
 const News = (props) => {
     return (
         <div className={classes.content}>
-           {props.newsPage.newsPageText}
+           {/* {props.newsPage.newsPageText} */}
         </div>
     );
     
