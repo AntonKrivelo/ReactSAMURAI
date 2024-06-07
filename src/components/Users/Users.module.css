@@ -1,0 +1,92 @@
+.content {
+    grid-area: content;
+    background: rgba(94, 168, 236, 0.959);
+    margin-top: 5px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 40px;
+    font-weight: 600;
+
+  }
+
+  .avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+  }
+ 
+  .global {
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    
+  }
+  .background__users {
+    display: flex;
+    column-gap: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+  }
+  .status__user {
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .location__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info__user {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .follow__btn {
+    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+    transition: 0.5s;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+
+  .follow__btn:hover {
+    transform: translate(0,-3px);
+    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+    background-color: rgba(11, 99, 246, 1);
+    color: #FFF;
+}
+
+.unfollow__btn {
+  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+  transition: 0.5s;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+
+.unfollow__btn:hover {
+  transform: translate(0,-3px);
+  box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+  background-color: rgba(11, 99, 246, 1);
+  color: #FFF;
+}
