@@ -4,11 +4,11 @@ import DialogItem from "./DialogItem";
 import Message from "./Message";
 
 const Dialogs = (props) => {
-
+    
     let state = props.messagesPage;
-
+   
     let newMessagesElement = React.createRef();
-
+    
     let onSubmitMessage = () => {
         props.sendMessage();
     };

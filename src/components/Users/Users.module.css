@@ -10,7 +10,7 @@
 
   }
 
-  .avatar {
+  .photos {
     width: 55px;
     height: 55px;
     border-radius: 100%;
@@ -19,13 +19,15 @@
   .global {
     display: flex;
     flex-direction: column; 
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     
   }
   .background__users {
     display: flex;
+    flex-direction: column;
     column-gap: 100px;
-    border: 1px solid black;
     border-radius: 5px;
     
   }
