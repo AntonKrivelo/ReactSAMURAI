@@ -4,10 +4,10 @@ let SET_USERS = 'SET-USERS';
 
 let initialState = {
   users: [
-    {name: "Ivan K.", id: "1", status: "status is not defined", country: "Minsk, Belarus", followed: false},
-    {name: "Kirill S.", id: "2", status: "status is not defined", country: "Vitebsk, Belarus", followed: false},
-    {name: "Viktor R.", id: "3", status: "status is not defined", country: "Gomel, Belarus", followed: true},
-    {name: "Merry K.", id: "4", status: "status is not defined", country: "Brest, Belarus", followed: true},
+    // {name: "Ivan K.", id: "1", status: "status is not defined", country: "Minsk, Belarus", followed: false},
+    // {name: "Kirill S.", id: "2", status: "status is not defined", country: "Vitebsk, Belarus", followed: false},
+    // {name: "Viktor R.", id: "3", status: "status is not defined", country: "Gomel, Belarus", followed: true},
+    // {name: "Merry K.", id: "4", status: "status is not defined", country: "Brest, Belarus", followed: true},
   ]
 }
 
