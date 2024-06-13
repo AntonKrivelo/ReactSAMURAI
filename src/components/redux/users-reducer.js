@@ -1,14 +1,16 @@
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
 let SET_USERS = 'SET-USERS';
+let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+// let SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
+
+
 
 let initialState = {
-  users: [
-    // {name: "Ivan K.", id: "1", status: "status is not defined", country: "Minsk, Belarus", followed: false},
-    // {name: "Kirill S.", id: "2", status: "status is not defined", country: "Vitebsk, Belarus", followed: false},
-    // {name: "Viktor R.", id: "3", status: "status is not defined", country: "Gomel, Belarus", followed: true},
-    // {name: "Merry K.", id: "4", status: "status is not defined", country: "Brest, Belarus", followed: true},
-  ]
+  users: [ ],
+  totalUsersCount: 20,
+  pageSize: 10,
+  currentPage: 2
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -34,9 +36,14 @@ const usersReducer = (state = initialState, action) => {
               })
           }
   } else if (action.type === SET_USERS) {
-    return {
-        ...state, users: [...state.users, ...action.users] }
-  }
+    return { ...state, users: action.users}
+        
+      } else if (action.type === SET_CURRENT_PAGE) {
+    return {...state, currentPage: action.currentPage}
+   } 
+  //  else if (action.type === SET_USERS_TOTAL_COUNT) {
+  //   return {...state, totalUsersCount: action.count}
+  // }
   
   return state
 };
@@ -55,7 +62,13 @@ export const setUsersActionCreator = (users) => {
   return {type: SET_USERS, users}
 };
 
+export const setCurrentPageActionCreator = (currentPage) => {
+  return {type: SET_CURRENT_PAGE, currentPage}
+};
 
+// export const setUsersTotalCountActionCreator = (totalUsersCount) => {
+//   return {type: SET_USERS_TOTAL_COUNT, count: totalUsersCount}
+// }
 
 
 

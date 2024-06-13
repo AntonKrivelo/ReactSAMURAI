@@ -92,3 +92,11 @@
   background-color: rgba(11, 99, 246, 1);
   color: #FFF;
 }
+
+.selectedPage {
+  font-weight: 900;
+}
+
+span {
+  cursor: pointer;
+}
