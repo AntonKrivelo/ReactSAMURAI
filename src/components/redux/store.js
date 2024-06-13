@@ -67,7 +67,7 @@ dispatch(action) {
   this._state.profilePage = profileReducer(this._state.profilePage, action);
   this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
   this._state.sideBar = sideBarReducer(this._state.sideBar, action);
- 
+  
 
   this._callSubscriber(this._state);
 
