@@ -10,40 +10,38 @@ let initialState = {
   users: [ ],
   totalUsersCount: 20,
   pageSize: 10,
-  currentPage: 2
+  currentPage: 1
 }
 
 const usersReducer = (state = initialState, action) => {
-  if(action.type === FOLLOW) {
-        return  {
-              ...state, 
-                users: state.users.map(u =>  {
-                if (u.id === action.userId ) {
-                  return {...u, followed: true}
-                }
-                return u;
-         })  
-      }
 
-  }  else if (action.type === UNFOLLOW) {
-    return {
-          ...state,
-              users: state.users.map(u => {
-                if(u.id === action.userId) {
-                  return {...u, followed: false}
-                }
-                return u;
-              })
-          }
-  } else if (action.type === SET_USERS) {
-    return { ...state, users: action.users}
-        
-      } else if (action.type === SET_CURRENT_PAGE) {
-    return {...state, currentPage: action.currentPage}
-   } 
-  //  else if (action.type === SET_USERS_TOTAL_COUNT) {
-  //   return {...state, totalUsersCount: action.count}
-  // }
+  switch (action.type) {
+    case FOLLOW: 
+      return {
+        ...state, 
+            users: state.users.map(u =>  {
+            if (u.id === action.userId ) {
+                return {...u, followed: true}
+              }
+              return u;
+          })  
+      }
+      case UNFOLLOW:
+          return {
+            ...state,
+                users: state.users.map(u => {
+                  if(u.id === action.userId) {
+                    return {...u, followed: false}
+                  }
+                  return u;
+                })}
+      case SET_USERS: 
+          return { ...state, users: action.users}
+      case SET_CURRENT_PAGE:
+          return {...state, currentPage: action.currentPage}
+      default: return state;
+  }
+
   
   return state
 };
