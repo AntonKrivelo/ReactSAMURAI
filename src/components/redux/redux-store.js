@@ -3,11 +3,13 @@ import profileReducer from './profile-reducer';
 import dialogsReducer from './dialogs-reducer';
 import sideBarReducer from './sidebar-reducer';
 import usersReducer from './users-reducer';
+import authReducer from './auth-reducer';
 
 let reducersPack = combineReducers({
     profilePage:profileReducer,
     messagesPage:dialogsReducer,
     usersPage: usersReducer,
+    auth: authReducer,
     // sideBar:sideBarReducer,
 });
 

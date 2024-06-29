@@ -24,8 +24,17 @@
 .setting_icon {
   i {
     position: absolute;
-    right: 1%;
+    right: 10%;
     top: 22%;
     font-size: 38px;
   }
+}
+
+
+.loginBlock {
+  float: right;
+  margin-top: 15px; 
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
