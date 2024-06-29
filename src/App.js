@@ -19,8 +19,8 @@ const App = (props) => {
             <Nav  />       
             {/* state={props.state.sideBar} */}
             <Routes>
-                <Route path="/profile/*" element={ <ProfileContainer /> } />
-                <Route path="/dialogs/*" element={ <DialogsContainer />} /> 
+                <Route path="/profile/:userId?" element={ <ProfileContainer /> } />
+                <Route path="/dialogs" element={ <DialogsContainer />} /> 
                 <Route path="/news" element={<News />}/>
                 <Route path="/music" element={<Music />}/>
                 <Route path="/users" element={<UsersContainer />} />
