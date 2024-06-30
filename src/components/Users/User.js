@@ -2,6 +2,7 @@ import React from "react";
 import classes from './Users.module.css';
 import userIMG from '../../assets/image/userIMG.png';
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const User = (props) => {
    
@@ -32,7 +33,39 @@ const User = (props) => {
                         <img className={classes.photos} src= {u.photos.small != null ? u.photos.small: userIMG} alt="photo" />
                    </NavLink>  
                      
-                        {u.followed ? <button onClick={() => {props.unfollow(u.id)}} className={classes.unfollow__btn}>UnFollow</button> : <button onClick={() => {props.follow(u.id)}} className={classes.follow__btn}>Follow</button> }
+                        {u.followed 
+                        
+                        ? <button onClick={() => {
+                            
+                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                withCredentials: true,
+                                headers: {
+                                    'API-KEY': 'c5d80810-254a-486b-9fbd-038eb22a12aa'
+                                }
+                            })
+                            .then(response => {  
+                                if(response.data.resultCode == 0) {
+                                    props.unfollow(u.id);
+                                }
+                        })
+
+                        }}  className={classes.unfollow__btn}>UnFollow</button> 
+                           
+                        : <button onClick={() => {
+                            
+                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                withCredentials: true,
+                                headers: {
+                                    'API-KEY': 'c5d80810-254a-486b-9fbd-038eb22a12aa'
+                                }
+                            })
+                            .then(response => {  
+                                if(response.data.resultCode == 0) {
+                                    props.follow(u.id);
+                                }
+                        })
+                            }} className={classes.follow__btn}>Follow</button> }
+                                
                 </div>
                
                 <div className={classes.background__users}> 
