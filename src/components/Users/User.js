@@ -2,7 +2,6 @@ import React from "react";
 import classes from './Users.module.css';
 import userIMG from '../../assets/image/userIMG.png';
 import { NavLink } from "react-router-dom";
-import axios from "axios";
 import { unFollow, follow } from "../../api/api";
 
 const User = (props) => {
@@ -31,27 +30,31 @@ const User = (props) => {
                 <div className={classes.global}>
                    
                    <NavLink to={'/profile/' + u.id}>  
-                        <img className={classes.photos} src= {u.photos.small != null ? u.photos.small: userIMG} alt="photo" />
+                        <img className={classes.photos} src={u.photos.small != null ? u.photos.small: userIMG} alt="img" />
                    </NavLink>  
                      
                         {u.followed 
                         
-                        ? <button onClick={() => {
-                            unFollow(u)
+                        ? <button disabled={props.toggleInProgress} onClick={() => {
+                            props.toggleInProgress(true)
+                            unFollow(u.id)
                             .then(response => {  
-                                if(response.data.resultCode == 0) {
+                                if(response.data.resultCode === 0) {
                                     props.unfollow(u.id);
                                 }
+                                props.toggleInProgress(false)
                         })
 
                         }}  className={classes.unfollow__btn}>UnFollow</button> 
                            
-                        : <button onClick={() => {
-                            follow(u)
+                        : <button disabled={props.toggleInProgress} onClick={() => {
+                            props.toggleInProgress(true);
+                            follow(u.id)
                             .then(response => {  
-                                if(response.data.resultCode == 0) {
+                                if(response.data.resultCode === 0) {
                                     props.follow(u.id);
                                 }
+                                props.toggleInProgress(false)
                         })
                             }} className={classes.follow__btn}>Follow</button> }
                                 
