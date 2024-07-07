@@ -1,3 +1,4 @@
+import { getProfile } from "../../api/api";
 let ADD_POST = 'ADD-POST';
 let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let SET_USER_PROFILE = 'SET-USER-PROFILE';
@@ -37,7 +38,7 @@ const profileReducer = (state = initialState, action) => {
         let stateCopy = {...state};
         stateCopy.profile = action.profile
         return stateCopy;
-    }
+    } 
 
     return state;
 }
@@ -48,6 +49,28 @@ export const setUserProfile = (profile) => {
   }
 
 
+export const getUserProfile = (userId) => {
+    return(dispatch) => {
+        getProfile(userId)
+            .then(response => {  
+            dispatch(setUserProfile(response.data));
+    });
+    }
+}
+
+
+//   export const profileUser = (userId) => {
+//     return (dispatch) => {
+//       dispatch(followingInProgress(true, id));
+//       unfollow(id)
+//           .then(response => {  
+//               if(response.data.resultCode == 0) { 
+//               dispatch(unfollowSuccess(id))
+//           }
+//           dispatch(followingInProgress(false, id));
+//       })
+//     }
+//   }
 
 
 
