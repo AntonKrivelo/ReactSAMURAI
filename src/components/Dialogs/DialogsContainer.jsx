@@ -6,6 +6,7 @@ let mapStateToProps = (state) => {
     return {
         messagesPage: state.messagesPage,
         newMessageText: state.newMessageText,
+        isAuth: state.auth.isAuth
     }
 }
 
