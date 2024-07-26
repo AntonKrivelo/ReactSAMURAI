@@ -1,17 +1,20 @@
 .nav {
     grid-area: nav;
-    background: rgba(191, 215, 236, 0.959);
+    background: rgba(84, 94, 240, 0.414);
+    box-shadow: 0px 4px 8px 15px rgba(34, 60, 80, 0.2);
     padding: 5px;
     margin-top: 5px;
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 600;
     border-radius: 5px;
     margin-right: 5px;
+    margin-bottom: 20px;
   }
   .item {
-    padding: 6px;
+    padding: 10px;
     cursor: pointer;
-    font-weight: 800;
+    font-weight: 500;
+
   }
   .item:active {
     color: rgb(255, 255, 255);
@@ -32,10 +35,12 @@
     margin-top: 15px;
   }
 .item i {
-  padding: 5px;
+  padding: 10px;
 }
 
 a {
   text-decoration: none;
   color: #000;
+  margin: 5px;
+ 
 }

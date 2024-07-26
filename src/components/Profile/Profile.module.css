@@ -1,9 +1,11 @@
   .content {
     grid-area: content;
-    background: rgba(191, 215, 236, 0.959);
+    background: rgba(84, 94, 240, 0.414);
+    box-shadow: 0px 4px 8px 15px rgba(34, 60, 80, 0.2);
     margin-top: 5px;
     padding-bottom: 20px;
     border-radius: 5px;
+    margin-bottom: 20px;
   }
   
   .bgContent img {
