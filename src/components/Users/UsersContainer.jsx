@@ -3,6 +3,9 @@ import { followSuccess, unfollowSuccess, setUsers, setCurrentPage, toggleIsFetch
 import React from "react";
 import User from "./User";
 import Preloader from "../common/preloader/preloader";
+import {compose} from "redux";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+
 
 class UsersContainer extends React.Component {
 
@@ -80,11 +83,6 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(getUsersThunkCreator(pageSize,currentPage))
         }
       
-
-
-
-
-
         // setTotalUsersCount:(totalCount) => {
         //     dispatch(setUsersTotalCountActionCreator(totalCount))
         // }
@@ -93,17 +91,12 @@ let mapDispatchToProps = (dispatch) => {
 }
 // {follow, unfollow, setUsers, setCurrentPage, toggleIsFetching, followingInProgress }
 
-export default connect(mapStateToProps, mapDispatchToProps) (UsersContainer);
-
-  
-    
-    
-    
-    
+export default compose (
+    connect (mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+) (UsersContainer);
 
 
-
-    
 // this.props.getUsersThunkCreator(pageNumber, this.props.currentPage);
         
 // this.props.toggleIsFetching(true);
