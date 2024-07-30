@@ -21,3 +21,6 @@
   .mainInformation span {
     font-weight: 800;
   }
+  .status {
+    padding: 15px;
+  }
