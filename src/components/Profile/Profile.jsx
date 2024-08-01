@@ -10,7 +10,7 @@ const Profile = (props) => {
     return (
         <div className={classes.content}>
             <ProfileInfo profile={props.profile} />
-            <ProfileStatus />
+            <ProfileStatus status={props.status} />
             <MyPostsContainer />
         </div>  
     );

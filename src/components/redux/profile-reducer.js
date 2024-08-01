@@ -1,8 +1,11 @@
 import { getProfile } from "../../api/api";
+
 let ADD_POST = 'ADD-POST';
 let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let SET_USER_PROFILE = 'SET-USER-PROFILE';
-
+//status
+let SET_STATUS = 'SET-STATUS';
+//status
 
 
 let initialState = {
@@ -12,7 +15,10 @@ let initialState = {
         {message:"hi, how are you?", counter: 20, id:3},
         ],
     newPostText: '',
-    profile: null
+    profile: null,
+    //status
+    status: ''
+    //status
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -39,14 +45,50 @@ const profileReducer = (state = initialState, action) => {
         stateCopy.profile = action.profile
         return stateCopy;
     } 
-
+    //status
+    else if (action.type === SET_STATUS) {
+        let stateCopy = {...state};
+        stateCopy.status = action.status;
+        return stateCopy;
+    //status    
+    }
     return state;
 }
 
 
+//status
+export const setStatus = (status) => {
+    return {type: SET_STATUS, status}
+}
+//status
+
 export const setUserProfile = (profile) => {
     return  {type: SET_USER_PROFILE, profile}
   }
+
+
+//status thuNK-a
+export const getStatus = (userId) => {
+return(dispatch) => {
+    getStatus(userId)
+        .then(response => {  
+            
+            dispatch(setStatus(response.data));
+        });
+    }
+}
+
+export const updateStatus = (status) => {
+return(dispatch) => {
+    updateStatus(status)
+        .then(response => {  
+            if (response.data.resultCode === 0) {
+                dispatch(setStatus(status));
+            }
+        });
+    }
+}
+//status THUNK-a
 
 
 export const getUserProfile = (userId) => {
