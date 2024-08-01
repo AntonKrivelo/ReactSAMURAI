@@ -16,11 +16,11 @@ export const getProfile = (userId) => {
     return instance.get (baseUrl + `profile/` + userId);
 }
 
-export const getStatus = (userId) => {
-    return instance.get(baseUrl + `profile/status/` + userId); 
+export const getStatusApi = (userId) => {
+    return instance.get(baseUrl + `profile/status/` + userId);
 }
-export let updateStatus = (status) => {
-    return instance.put(`profile/status`, {status: status}); 
+export let updateStatusApi = (status) => {
+    return instance.put(`profile/status`, {status: status});
 }
 
 // Profile
@@ -30,7 +30,7 @@ export let updateStatus = (status) => {
 //Users
 export const getUsers = (currentPage = 1, pageSize = 10) => {
     return instance.get (baseUrl + `users?page=${currentPage}&count=${pageSize}`, {
-        
+
     })
     .then(responce => {
         return responce.data
@@ -44,14 +44,14 @@ export const unFollow = (id) => {
 
 export const follow = (id) => {
     return instance.post(baseUrl + `follow/${id}`, {})
- 
+
 }
 //Users
 
 export const authAPI = {
     me() {
        return instance.get(baseUrl + `auth/me`, {
-        }) 
+        })
     }
 }
 

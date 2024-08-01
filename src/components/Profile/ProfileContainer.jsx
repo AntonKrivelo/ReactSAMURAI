@@ -15,20 +15,40 @@ export function withRouter(ProfileContainer) {
 
 class ProfileContainer extends React.Component {
 
-componentDidUpdate() {
-    let userId = this.props.match.params.userId;
+    componentDidMount() {
+        let userId = this.props.match.params.userId;
+
         if(!userId) {
             userId = 31383;
         }
+
         this.props.getUserProfile(userId);
-        
         this.props.getStatus(userId);
-}
+    }
+
+    componentDidUpdate(prevProps) {
+        let userId = this.props.match.params.userId;
+
+        if(!userId) {
+            userId = 31383;
+        }
+
+        if(prevProps.match.params.userId && prevProps.match.params.userId !== userId){
+            this.props.getUserProfile(userId);
+            this.props.getStatus(userId);
+        }
+    }
+
     render() {
         return (
-               <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>
-            )
-        }
+            <Profile
+                {...this.props}
+                profile={this.props.profile}
+                status={this.props.status}
+                updateStatus={this.props.updateStatus}
+            />
+        )
+    }
 
 }
 
