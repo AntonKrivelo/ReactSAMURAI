@@ -1,4 +1,4 @@
-import { getProfile } from "../../api/api";
+import { getProfile, getStatusApi, updateStatusApi } from "../../api/api";
 
 let ADD_POST = 'ADD-POST';
 let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -39,18 +39,18 @@ const profileReducer = (state = initialState, action) => {
         let stateCopy = {...state};
         stateCopy.newPostText = action.newText;
         return stateCopy;
-   
+
     } else if (action.type === SET_USER_PROFILE) {
         let stateCopy = {...state};
         stateCopy.profile = action.profile
         return stateCopy;
-    } 
+    }
     //status
     else if (action.type === SET_STATUS) {
         let stateCopy = {...state};
         stateCopy.status = action.status;
         return stateCopy;
-    //status    
+    //status
     }
     return state;
 }
@@ -64,28 +64,29 @@ export const setStatus = (status) => {
 
 export const setUserProfile = (profile) => {
     return  {type: SET_USER_PROFILE, profile}
-  }
+}
 
 
 //status thuNK-a
 export const getStatus = (userId) => {
-return(dispatch) => {
-    getStatus(userId)
-        .then(response => {  
-            
-            dispatch(setStatus(response.data));
-        });
+    return(dispatch) => {
+        getStatusApi(userId)
+            .then(response => {
+                dispatch(setStatus(response.data));
+            }
+        );
     }
 }
 
 export const updateStatus = (status) => {
-return(dispatch) => {
-    updateStatus(status)
-        .then(response => {  
-            if (response.data.resultCode === 0) {
-                dispatch(setStatus(status));
+    return(dispatch) => {
+        updateStatusApi(status)
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(setStatus(status));
+                }
             }
-        });
+        );
     }
 }
 //status THUNK-a
@@ -94,7 +95,7 @@ return(dispatch) => {
 export const getUserProfile = (userId) => {
     return(dispatch) => {
         getProfile(userId)
-            .then(response => {  
+            .then(response => {
             dispatch(setUserProfile(response.data));
     });
     }
@@ -105,8 +106,8 @@ export const getUserProfile = (userId) => {
 //     return (dispatch) => {
 //       dispatch(followingInProgress(true, id));
 //       unfollow(id)
-//           .then(response => {  
-//               if(response.data.resultCode == 0) { 
+//           .then(response => {
+//               if(response.data.resultCode == 0) {
 //               dispatch(unfollowSuccess(id))
 //           }
 //           dispatch(followingInProgress(false, id));
