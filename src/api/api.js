@@ -11,12 +11,23 @@ const instance = axios.create({
     }
 });
 
-
+// Profile
 export const getProfile = (userId) => {
     return instance.get (baseUrl + `profile/` + userId);
 }
 
+export const getStatus = (userId) => {
+    return instance.get(baseUrl + `profile/status/` + userId); 
+}
+export let updateStatus = (status) => {
+    return instance.put(`profile/status`, {status: status}); 
+}
 
+// Profile
+
+
+
+//Users
 export const getUsers = (currentPage = 1, pageSize = 10) => {
     return instance.get (baseUrl + `users?page=${currentPage}&count=${pageSize}`, {
         
@@ -35,7 +46,7 @@ export const follow = (id) => {
     return instance.post(baseUrl + `follow/${id}`, {})
  
 }
-
+//Users
 
 export const authAPI = {
     me() {
