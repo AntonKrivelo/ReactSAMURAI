@@ -17,7 +17,7 @@ let initialState = {
     newPostText: '',
     profile: null,
     //status
-    status: ''
+    status: ""
     //status
 }
 

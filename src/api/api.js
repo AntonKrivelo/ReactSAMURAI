@@ -20,7 +20,7 @@ export const getStatusApi = (userId) => {
     return instance.get(baseUrl + `profile/status/` + userId);
 }
 export let updateStatusApi = (status) => {
-    return instance.put(`profile/status`, {status: status});
+    return instance.put(baseUrl + `profile/status`, {status: status});
 }
 
 // Profile

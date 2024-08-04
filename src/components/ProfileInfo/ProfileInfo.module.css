@@ -24,3 +24,8 @@
   .status {
     padding: 15px;
   }
+
+  .inputStatus {
+    background-color: rgb(66, 246, 234);
+    cursor: pointer;
+  }
