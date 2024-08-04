@@ -26,18 +26,18 @@ class ProfileContainer extends React.Component {
         this.props.getStatus(userId);
     }
 
-    componentDidUpdate(prevProps) {
-        let userId = this.props.match.params.userId;
+    // componentDidUpdate(prevProps) {
+    //     let userId = this.props.match.params.userId;
 
-        if(!userId) {
-            userId = 31383;
-        }
+    //     if(!userId) {
+    //         userId = 31383;
+    //     }
 
-        if(prevProps.match.params.userId && prevProps.match.params.userId !== userId){
-            this.props.getUserProfile(userId);
-            this.props.getStatus(userId);
-        }
-    }
+    //     if(prevProps.match.params.userId && prevProps.match.params.userId !== userId){
+    //         this.props.getUserProfile(userId);
+    //         this.props.getStatus(userId);
+    //     }
+    // }
 
     render() {
         return (
