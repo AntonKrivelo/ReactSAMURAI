@@ -1,5 +1,5 @@
 let ADD_MESSAGE = 'ADD-MESSAGE';
-let UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 
 
 let initialState = {
@@ -17,8 +17,8 @@ let initialState = {
     {name: "Sveta", id: 4},
     {name: "Andrey", id: 5},
     {name: "Sergey", id: 6},
-  ],
-  newMessageText: '',
+  ]
+
 }
 
 
@@ -27,21 +27,14 @@ const dialogsReducer = (state = initialState, action) => {
     if (action.type === ADD_MESSAGE) {
         let newMessage = {
           id: 8,
-          message: state.newMessageText,
+          message: action.newMessageText,
         };
         
         let stateCopy = {...state};
         stateCopy.messagesData.push(newMessage); 
-        stateCopy.newMessageText = '';
         return stateCopy;
 
-  } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      
-        let stateCopy = {...state};
-        stateCopy.newMessageText = action.newText;
-        return stateCopy;
-
-      }
+  } 
     return state;
 };
 
