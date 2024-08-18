@@ -23,6 +23,9 @@ export let updateStatusApi = (status) => {
     return instance.put(baseUrl + `profile/status`, {status: status});
 }
 
+export let authLoginApi = (userId) => {
+    return instance.post(baseUrl + `auth/login` + userId)
+}
 // Profile
 
 
