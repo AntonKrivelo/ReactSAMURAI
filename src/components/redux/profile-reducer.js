@@ -14,7 +14,6 @@ let initialState = {
         {message:"hi, how are you?", counter: 20, id:2},
         {message:"hi, how are you?", counter: 20, id:3},
         ],
-    newPostText: '',
     profile: null,
     //status
     status: ""
@@ -26,7 +25,7 @@ const profileReducer = (state = initialState, action) => {
     if(action.type === ADD_POST) {
         let newPost = {
         id: 6,
-        message: state.newPostText,
+        message: action.newPostText,
         counter: 0,
     }
         let stateCopy = {...state};

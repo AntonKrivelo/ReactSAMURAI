@@ -6,7 +6,7 @@ let ADD_POST = 'ADD-POST';
 let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let ADD_MESSAGE = 'ADD-MESSAGE';
-let UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 
 let store = {
   
@@ -18,7 +18,6 @@ _state: {
           {message:"hi, how are you?", counter: 20, id:2},
           {message:"hi, how are you?", counter: 20, id:3},
           ],
-          newPostText: '',
   },
   messagesPage: {
       messagesData: [
@@ -101,9 +100,9 @@ dispatch(action) {
 };
 
 
-export const addPostActionCreator = () => {
+export const addPostActionCreator = (newPostText) => {
   return {
-      type: ADD_POST
+      type: ADD_POST, newPostText
   };  
 };
 
@@ -112,15 +111,15 @@ export const updateNewPostTextActionCreator = (text) => {
 };
 
 
-export const submitMessageActionCreator = () => {
+export const submitMessageActionCreator = (newMessageText) => {
   return {
-      type: ADD_MESSAGE
+      type: ADD_MESSAGE, newMessageText
   }
 }
 
-export const onMessageChangeActionCreator = (message) => {
-  return {type: UPDATE_NEW_MESSAGE_TEXT, newText: message}
-}
+// export const onMessageChangeActionCreator = (message) => {
+//   return {type: UPDATE_NEW_MESSAGE_TEXT, newText: message}
+// }
 
 
 
