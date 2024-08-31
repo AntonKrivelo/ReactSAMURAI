@@ -26,6 +26,7 @@ export let updateStatusApi = (status) => {
 export let authLoginApi = (userId) => {
     return instance.post(baseUrl + `auth/login` + userId)
 }
+
 // Profile
 
 
@@ -55,7 +56,14 @@ export const authAPI = {
     me() {
        return instance.get(baseUrl + `auth/me`, {
         })
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(baseUrl + `auth/login`, {email, password, rememberMe})
+    },
+    logout() {
+        return instance.delete(baseUrl + `auth/login`, {         
+        });
     }
-}
+};
 
 
