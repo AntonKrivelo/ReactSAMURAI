@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Nav/Nav';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginPage from './components/Login/Login';
+import { connect } from 'react-redux';
+import { initializeApp } from './components/redux/app-reducer';
+import Preloader from './components/common/preloader/preloader';
 
-const App = (props) => {
+class App extends Component {
   
-  return (
+    componentDidMount() {
+      this.props.initializeApp();
+  }
+
+
+  render() {
+     
+    if(!this.props.initialized) {
+      return <Preloader />
+    }
+
+    
+      return (
         <div className="app-wrapper">
             <HeaderContainer />
             <Nav  />       
@@ -28,10 +43,16 @@ const App = (props) => {
                 <Route path="/login" element={<LoginPage />}/> 
             </Routes>
         </div>
-  );
+      )
+  }
 } 
 
 
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
 
-export default App;
+
+export default 
+  connect(mapStateToProps, {initializeApp}) (App) ;
 

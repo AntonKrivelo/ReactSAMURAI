@@ -3,6 +3,8 @@ import classes from "./ProfileInfo.module.css";
 
 
 
+// const [status, setStatus] = React.useState()
+
 class ProfileStatus extends React.Component  {
     state = {
         editMode: false,

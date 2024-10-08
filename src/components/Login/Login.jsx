@@ -6,7 +6,6 @@ import { Input } from "../common/FormsControl/FormControls"
 import { maxLengthCreator, minLengthCreator, requiredField } from "../../utils/validators/validators"
 import { connect } from "react-redux";
 import { login } from "../redux/auth-reducer"
-import { redirect } from "react-router-dom";
 
 const LoginForm = (props) => {
     return (   
